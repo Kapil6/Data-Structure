@@ -6,15 +6,6 @@
 
 #include "bst_header.h"
 
-NODE *insert(NODE *node, int key) {
-	if (node == NULL)
-		return newNode(key);
-	else {
-
-		return NULL;
-	}
-}
-
 int main()
 {
 	NODE *root = NULL;
