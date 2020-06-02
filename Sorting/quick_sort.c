@@ -49,9 +49,10 @@ void quickSort(int arr[], int low, int high)
 void printArray(int arr[], int n)
 {
 	int i;
+	printf("Elements are -> ");
 	for (i = 0; i < n; i++)
 	{
-		printf("%d, ", arr[i]);
+		printf(" %d ", arr[i]);
 	}
 	printf("\n");
 }
@@ -61,8 +62,9 @@ int main()
 	int arr[] = {10,16,8,12,15,6,3,9,5};
 	int size;
 	size = sizeof(arr)/sizeof(arr[0]);
-	printf("Size of array:[%d]\n", size);
+	printArray(arr,size);
 	quickSort(arr, 0, size-1);
-	printArray(arr,size-1);
+	printf("\t\tAfter sort\n");
+	printArray(arr,size);
 	return 0;
 }
