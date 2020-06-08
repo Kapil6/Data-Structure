@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+/*This function swaps the element*/
 void swap(int *a, int *b)
 {
 	int temp;
@@ -8,6 +9,7 @@ void swap(int *a, int *b)
 	*a = temp;
 }
 
+/*This function returns the pivot position it means this position has its expected element*/
 int partition(int arr[], int low, int high)
 {
 	int pivot, i, j;
@@ -17,35 +19,40 @@ int partition(int arr[], int low, int high)
 	
 	if (i < j)
 	{
+		/*increament the i index untill pivot is greater and equal than the i indexed element*/
 		do
 		{
 			i++;
 		}while(arr[i] <= pivot);
 
+		/*decreament the j index untill pivot is less than the j indexed element*/
 		do 
 		{
 			j--;
 		}while(arr[j] > pivot);
-
+	
+		/*swap the element i and j*/	
 		if (i < j)
 			swap(&arr[i], &arr[j]);	
 	}
-	
+	/*swap the element with low*/
 	swap(&arr[low], &arr[j]);
 	return j;
 }
 
+/*This is the quick sort algorithm*/
 void quickSort(int arr[], int low, int high)
 {
 	if (low < high)
 	{
 		int pi;
-		pi = partition(arr, low, high);
+		pi = partition(arr, low, high);// Get the pivot position
 		quickSort(arr, low, pi);
 		quickSort(arr, pi+1, high);
 	}
 }
 
+/*This function print the array elements*/
 void printArray(int arr[], int n)
 {
 	int i;
